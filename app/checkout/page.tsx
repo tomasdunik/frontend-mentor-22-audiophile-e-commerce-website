@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Image from "next/image";
 import ButtonGoBack from "../../components/ButtonGoBack";
 import CheckoutSummary from "../../components/CheckoutSummary";
 import CompletOrderModal from "../../components/CompletOrderModal";
+import IconCashOnDelivery from "../../public/images/checkout/icon-cash-on-delivery.svg";
 
 type FormErrors = {
   name?: string;
@@ -357,66 +359,83 @@ const CheckoutPage = () => {
                   </label>
                 </div>
               </div>
-              <div className="md:flex md:gap-4">
-                <div className="mb-6 flex w-full flex-col gap-[9px] md:mb-0">
-                  <label
-                    htmlFor="e-money-number"
-                    className={`text-xxs tracking--0-21 flex justify-between leading-16 font-bold ${
-                      errors.eMoneyNumber ? "text-wrong-red" : ""
-                    }`}
-                  >
-                    <span>e-Money Number</span>
-                    {errors.eMoneyNumber && (
-                      <span className="text-wrong-red text-xxs tracking--0-21 leading-16 font-medium">
-                        {errors.eMoneyNumber}
-                      </span>
-                    )}
-                  </label>
-                  <input
-                    id="e-money-number"
-                    name="e-money-number"
-                    type="number"
-                    autoComplete="e-money-number"
-                    required={paymentMethod === "e-money"}
-                    placeholder="238521993"
-                    aria-invalid={!!errors.eMoneyNumber}
-                    className={`placeholder-black-40 rounded-lg border ${
-                      errors.eMoneyNumber
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
-                        : "border-[#CFCFCF]"
-                    } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
-                  />
+              {paymentMethod === "e-money" && (
+                <div className="md:flex md:gap-4">
+                  <div className="mb-6 flex w-full flex-col gap-[9px] md:mb-0">
+                    <label
+                      htmlFor="e-money-number"
+                      className={`text-xxs tracking--0-21 flex justify-between leading-16 font-bold ${
+                        errors.eMoneyNumber ? "text-wrong-red" : ""
+                      }`}
+                    >
+                      <span>e-Money Number</span>
+                      {errors.eMoneyNumber && (
+                        <span className="text-wrong-red text-xxs tracking--0-21 leading-16 font-medium">
+                          {errors.eMoneyNumber}
+                        </span>
+                      )}
+                    </label>
+                    <input
+                      id="e-money-number"
+                      name="e-money-number"
+                      type="number"
+                      autoComplete="e-money-number"
+                      required={paymentMethod === "e-money"}
+                      placeholder="238521993"
+                      aria-invalid={!!errors.eMoneyNumber}
+                      className={`placeholder-black-40 rounded-lg border ${
+                        errors.eMoneyNumber
+                          ? "border-wrong-red outline-wrong-red outline outline-2"
+                          : "border-[#CFCFCF]"
+                      } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
+                    />
+                  </div>
+                  <div className="flex w-full flex-col gap-[9px]">
+                    <label
+                      htmlFor="e-money-pin"
+                      className={`text-xxs tracking--0-21 flex justify-between leading-16 font-bold ${
+                        errors.eMoneyPin ? "text-wrong-red" : ""
+                      }`}
+                    >
+                      <span>e-Money PIN</span>
+                      {errors.eMoneyPin && (
+                        <span className="text-wrong-red text-xxs tracking--0-21 leading-16 font-medium">
+                          {errors.eMoneyPin}
+                        </span>
+                      )}
+                    </label>
+                    <input
+                      id="e-money-pin"
+                      name="e-money-pin"
+                      type="number"
+                      autoComplete="e-money-pin"
+                      required={paymentMethod === "e-money"}
+                      placeholder="6891"
+                      aria-invalid={!!errors.eMoneyPin}
+                      className={`placeholder-black-40 rounded-lg border ${
+                        errors.eMoneyPin
+                          ? "border-wrong-red outline-wrong-red outline outline-2"
+                          : "border-[#CFCFCF]"
+                      } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
+                    />
+                  </div>
                 </div>
-                <div className="flex w-full flex-col gap-[9px]">
-                  <label
-                    htmlFor="e-money-pin"
-                    className={`text-xxs tracking--0-21 flex justify-between leading-16 font-bold ${
-                      errors.eMoneyPin ? "text-wrong-red" : ""
-                    }`}
-                  >
-                    <span>e-Money PIN</span>
-                    {errors.eMoneyPin && (
-                      <span className="text-wrong-red text-xxs tracking--0-21 leading-16 font-medium">
-                        {errors.eMoneyPin}
-                      </span>
-                    )}
-                  </label>
-                  <input
-                    id="e-money-pin"
-                    name="e-money-pin"
-                    type="number"
-                    autoComplete="e-money-pin"
-                    required={paymentMethod === "e-money"}
-                    placeholder="6891"
-                    aria-invalid={!!errors.eMoneyPin}
-                    className={`placeholder-black-40 rounded-lg border ${
-                      errors.eMoneyPin
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
-                        : "border-[#CFCFCF]"
-                    } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
+              )}
+              {paymentMethod === "cod" && (
+                <div className="flex justify-between gap-8">
+                  <Image
+                    src={IconCashOnDelivery}
+                    alt=""
+                    className="h-12 w-12 self-center"
                   />
+                  <p className="text-md text-black-50 leading-25 font-medium">
+                    The &apos;Cash on Delivery&apos; option enables you to pay
+                    in cash when our delivery courier arrives at your residence.
+                    Just make sure your address is correct so that your order
+                    will not be cancelled.
+                  </p>
                 </div>
-              </div>
+              )}
             </fieldset>
           </form>
         </div>
