@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useCart } from "./CartContext";
+import { formatPrice } from "../utils/formatPrice";
 
 const SHIPPING = 50;
 const VAT_RATE = 0.2;
@@ -40,7 +41,7 @@ export default function CheckoutSummary() {
                         {item.name}
                       </p>
                       <p className="text-black-50 text-sm leading-25 font-bold">
-                        $ {item.price.toLocaleString()}
+                        $ {formatPrice(item.price)}
                       </p>
                     </div>
                     <p className="text-md text-black-50 leading-25 font-bold">
@@ -58,7 +59,7 @@ export default function CheckoutSummary() {
                     TOTAL
                   </p>
                   <p className="text-lg leading-25 font-bold">
-                    $ {total.toLocaleString()}
+                    $ {formatPrice(total)}
                   </p>
                 </div>
 
@@ -67,7 +68,7 @@ export default function CheckoutSummary() {
                     SHIPPING
                   </p>
                   <p className="text-lg leading-25 font-bold">
-                    $ {SHIPPING.toLocaleString()}
+                    $ {formatPrice(SHIPPING)}
                   </p>
                 </div>
 
@@ -76,7 +77,7 @@ export default function CheckoutSummary() {
                     VAT (INCLUDED)
                   </p>
                   <p className="text-lg leading-25 font-bold">
-                    $ {vat.toLocaleString()}
+                    $ {formatPrice(vat)}
                   </p>
                 </div>
               </div>
@@ -86,7 +87,7 @@ export default function CheckoutSummary() {
                   GRAND TOTAL
                 </p>
                 <p className="text-orange text-lg leading-25 font-bold">
-                  $ {grandTotal.toLocaleString()}
+                  $ {formatPrice(grandTotal)}
                 </p>
               </div>
             </div>

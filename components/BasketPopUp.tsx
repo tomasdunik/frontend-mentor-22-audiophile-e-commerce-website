@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useCart } from "./CartContext";
 import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import { formatPrice } from "../utils/formatPrice";
 
 interface BasketPopUpProps {
   onClose: () => void;
@@ -78,7 +79,7 @@ const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
               <div>
                 <p className="text-md leading-25 font-bold">{item.name}</p>
                 <p className="text-black-50 text-sm leading-25 font-bold">
-                  $ {item.price.toLocaleString()}
+                  $ {formatPrice(item.price)}
                 </p>
               </div>
             </div>
@@ -109,7 +110,7 @@ const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
           Total
         </p>
         <p className="text-lg leading-25 font-bold">
-          $ {totalPrice.toLocaleString()}
+          $ {formatPrice(totalPrice)}
         </p>
       </div>
 

@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import data from "../../../public/data.json";
 import QuantityAddToCart from "../../../components/QuantityAddToCart";
 import { Metadata } from "next";
+import { formatPrice } from "../../../utils/formatPrice";
 
 export async function generateMetadata({
   params,
@@ -82,7 +83,7 @@ const page = async ({
               {product.description}
             </p>
             <p className="tracking-1-29 mb-[31px] text-lg leading-25 font-bold lg:mb-[47px]">
-              $ {product.price}
+              $ {formatPrice(product.price)}
             </p>
             <div className="flex gap-4">
               <QuantityAddToCart

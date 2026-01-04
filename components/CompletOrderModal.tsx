@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { useCart } from "./CartContext";
 import { useState } from "react";
+import { formatPrice } from "../utils/formatPrice";
 
 const SHIPPING = 50;
 
@@ -63,7 +64,7 @@ const CompletOrderModal = () => {
                         {item.name}
                       </p>
                       <p className="text-black-50 text-sm leading-25 font-bold">
-                        ${item.price.toLocaleString()}
+                        ${formatPrice(item.price)}
                       </p>
                     </div>
                     <p className="text-black-50 text-md leading-25 font-bold">
@@ -109,7 +110,7 @@ const CompletOrderModal = () => {
               GRAND TOTAL
             </p>
             <p className="text-lg leading-25 font-bold text-white">
-              ${grandTotal.toLocaleString()}
+              ${formatPrice(grandTotal)}
             </p>
           </div>
         </div>
