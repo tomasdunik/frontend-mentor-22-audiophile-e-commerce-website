@@ -86,19 +86,21 @@ const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
 
             <div className="bg-grey-light tracking-1 flex h-8 w-fit items-center text-xs leading-18 font-bold">
               <button
-                className="text-black-25 hover:text-orange h-8 w-8 cursor-pointer"
+                className={`h-8 w-8 ${item.quantity > 1 ? "text-black-25 hover:text-orange cursor-pointer" : "cursor-default"}`}
                 type="button"
                 onClick={() => setQuantity(item.slug, item.quantity - 1)}
+                disabled={item.quantity <= 1}
               >
-                -
+                {item.quantity > 1 && "-"}
               </button>
               <p className="w-8 text-center">{item.quantity}</p>
               <button
-                className="text-black-25 hover:text-orange h-8 w-8 cursor-pointer"
+                className={`h-8 w-8 ${item.quantity < 10 ? "text-black-25 hover:text-orange cursor-pointer" : "cursor-default"}`}
                 type="button"
                 onClick={() => setQuantity(item.slug, item.quantity + 1)}
+                disabled={item.quantity >= 10}
               >
-                +
+                {item.quantity < 10 && "+"}
               </button>
             </div>
           </div>

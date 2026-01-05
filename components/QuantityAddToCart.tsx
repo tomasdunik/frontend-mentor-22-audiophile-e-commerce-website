@@ -27,19 +27,21 @@ export default function QuantityAddToCart({ item }: Props) {
     <div className="flex gap-4">
       <div className="bg-grey-light tracking-1 flex h-12 w-fit items-center text-xs leading-18 font-bold">
         <button
-          className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer"
+          className={`h-12 w-10 ${quantity > 1 ? "text-black-25 hover:text-orange cursor-pointer" : "cursor-default"}`}
           onClick={handleDecrease}
+          disabled={quantity <= 1}
           type="button"
         >
-          -
+          {quantity > 1 && "-"}
         </button>
         <p className="w-10 text-center">{quantity}</p>
         <button
-          className="text-black-25 hover:text-orange h-12 w-10 cursor-pointer"
+          className={`h-12 w-10 ${quantity < 10 ? "text-black-25 hover:text-orange cursor-pointer" : "cursor-default"}`}
           onClick={handleIncrease}
+          disabled={quantity >= 10}
           type="button"
         >
-          +
+          {quantity < 10 && "+"}
         </button>
       </div>
 
