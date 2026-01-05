@@ -14,6 +14,14 @@ const CategoryMenu = ({ onLinkClick }: CategoryMenuProps) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target;
+      if (target instanceof Element) {
+        // Clicking the burger/X toggle should not trigger "outside click" close,
+        // otherwise it closes on mousedown and instantly re-opens on button click.
+        if (target.closest('[data-menu-toggle="true"]')) {
+          return;
+        }
+      }
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target as Node) &&

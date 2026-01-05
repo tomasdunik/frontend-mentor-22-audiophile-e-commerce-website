@@ -20,6 +20,14 @@ const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target;
+      if (target instanceof Element) {
+        // Clicking the cart toggle button should not trigger "outside click" close,
+        // otherwise it closes on mousedown and instantly re-opens on button click.
+        if (target.closest('[data-basket-toggle="true"]')) {
+          return;
+        }
+      }
       if (
         popupRef.current &&
         !popupRef.current.contains(event.target as Node)

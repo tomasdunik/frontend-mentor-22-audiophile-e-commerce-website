@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import CategoryMenu from "./CategoryMenu";
-import BasketPopUp from "./BasketPopUp";
+import BasketPopUp from "./BaketModal";
 import { useCart } from "./CartContext";
 
 const Header = () => {
@@ -44,6 +44,7 @@ const Header = () => {
                 setMenuOpen((prev) => !prev);
                 setBasketOpen(false);
               }}
+              data-menu-toggle="true"
               aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
               {!menuOpen ? (
@@ -100,6 +101,7 @@ const Header = () => {
               setBasketOpen((prev) => !prev);
               setMenuOpen(false);
             }}
+            data-basket-toggle="true"
             aria-label="Open cart"
           >
             <svg
