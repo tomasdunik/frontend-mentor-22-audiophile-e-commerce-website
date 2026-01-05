@@ -42,10 +42,10 @@ export default function RootLayout({
           href="/favicon-16x16.png"
         />
       </head>
-      <body className={manrope.className}>
+      <body className={`${manrope.className} flex min-h-screen flex-col`}>
         <CartProvider>
           <Header />
-          {children}
+          <main className="flex-grow">{children}</main>
           <Footer />
         </CartProvider>
       </body>

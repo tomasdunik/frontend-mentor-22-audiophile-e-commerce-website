@@ -2,9 +2,11 @@
 
 import { useState, FormEvent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ButtonGoBack from "../../components/ButtonGoBack";
 import CheckoutSummary from "../../components/CheckoutSummary";
 import CompletOrderModal from "../../components/CompletOrderModal";
+import { useCart } from "../../components/CartContext";
 import IconCashOnDelivery from "../../public/images/checkout/icon-cash-on-delivery.svg";
 
 type FormErrors = {
@@ -20,11 +22,34 @@ type FormErrors = {
 };
 
 const CheckoutPage = () => {
+  const { items } = useCart();
   const [errors, setErrors] = useState<FormErrors>({});
   const [paymentMethod, setPaymentMethod] = useState<"e-money" | "cod">(
     "e-money",
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  if (items.length === 0) {
+    return (
+      <section className="mx-6 md:mx-10 lg:mx-auto lg:max-w-[1190px]">
+        <div className="flex flex-col items-center py-16 text-center md:py-24 lg:py-32">
+          <p className="tracking-10 text-orange mb-4 text-sm leading-19 uppercase">
+            Empty Cart
+          </p>
+          <h1 className="tracking-2 mb-6 text-2xl leading-38 font-bold uppercase md:text-4xl md:leading-44">
+            Your Cart is Empty
+          </h1>
+          <p className="text-black-50 text-md mx-auto mb-8 max-w-[560px] leading-25 font-medium md:mb-10">
+            Looks like you haven&apos;t added any items to your cart yet. Browse
+            our products and find something you love.
+          </p>
+          <Link href="/" className="button-primary--orange">
+            Continue Shopping
+          </Link>
+        </div>
+      </section>
+    );
+  }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();

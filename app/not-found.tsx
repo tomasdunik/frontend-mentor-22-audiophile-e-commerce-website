@@ -14,7 +14,7 @@ export default function NotFound() {
           The page you’re looking for doesn’t exist or has been moved.
         </p>
         <Link href="/" className="button-primary--orange">
-          Go Home
+          Return Home
         </Link>
       </div>
     </section>
