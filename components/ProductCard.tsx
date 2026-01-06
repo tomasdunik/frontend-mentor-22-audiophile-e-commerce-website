@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export type ProductCardProps = {
   title: string;
@@ -25,15 +26,26 @@ const ProductCard = ({
     <div
       className={`mb-[120px] flex flex-col items-center gap-[52px] px-6 md:px-10 lg:mx-auto lg:mb-[160px] lg:max-w-[1190px] lg:flex-row lg:gap-[125px] ${reverse ? "lg:flex-row-reverse" : ""}`}
     >
-      <picture>
-        <source media="(min-width: 1110px)" srcSet={image.desktop} />
-        <source media="(min-width: 768px)" srcSet={image.tablet} />
-        <img
-          className="h-auto w-full rounded-lg"
+      <div className="relative aspect-327/352 w-full overflow-hidden rounded-lg md:aspect-689/352 lg:aspect-540/560 lg:max-w-[540px]">
+        <Image
           src={image.mobile}
           alt={title}
+          fill
+          className="object-cover md:hidden"
         />
-      </picture>
+        <Image
+          src={image.tablet}
+          alt={title}
+          fill
+          className="hidden object-cover md:block lg:hidden"
+        />
+        <Image
+          src={image.desktop}
+          alt={title}
+          fill
+          className="hidden object-cover lg:block"
+        />
+      </div>
 
       <div className="flex flex-col items-center gap-6 md:max-w-[572px] md:gap-0 lg:mt-[109px] lg:mb-[109px] lg:max-w-[445px] lg:items-start">
         {isNew ? (

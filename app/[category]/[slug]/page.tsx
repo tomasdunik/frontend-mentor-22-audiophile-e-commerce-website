@@ -20,12 +20,12 @@ export async function generateMetadata({
 
   if (!product) {
     return {
-      title: "404 | audiophile",
+      title: "404 | Audiophile",
     };
   }
 
   return {
-    title: `${product.name} | audiophile`,
+    title: `${product.name} | Audiophile`,
     description: product.description,
   };
 }
@@ -55,23 +55,29 @@ const page = async ({
       <ButtonGoBack />
       <div className="px-6 md:flex md:flex-col md:px-10 lg:mx-auto lg:max-w-[1190px]">
         <div className="mb-[88px] flex flex-col items-center md:mb-[120px] md:flex md:flex-row md:gap-[69px] lg:mb-40 lg:gap-[124px]">
-          <picture>
-            <source
-              media="(min-width: 1110px)"
-              srcSet={img(product.image.desktop)}
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet={img(product.image.tablet)}
-            />
+          <div className="relative mb-8 aspect-327/327 w-full overflow-hidden rounded-lg md:mb-0 md:aspect-281/480 md:min-w-[281px] lg:aspect-540/560 lg:min-w-[540px]">
             <Image
-              className="mb-8 rounded-lg md:mb-0 md:min-w-[281px] lg:min-w-[540px]"
               src={img(product.image.mobile)}
               alt={product.name}
-              width={540}
-              height={560}
+              fill
+              className="object-cover md:hidden"
+              priority
             />
-          </picture>
+            <Image
+              src={img(product.image.tablet)}
+              alt={product.name}
+              fill
+              className="hidden object-cover md:block lg:hidden"
+              priority
+            />
+            <Image
+              src={img(product.image.desktop)}
+              alt={product.name}
+              fill
+              className="hidden object-cover lg:block"
+              priority
+            />
+          </div>
           <div className="md:flex md:flex-col">
             <p className="tracking-10 text-orange md:text-xxs md:tracking-8-57 mb-6 text-sm leading-19 uppercase md:mb-[17px] md:leading-16 lg:mb-[17px]">
               {product.new && "New Product"}
@@ -121,58 +127,67 @@ const page = async ({
         </div>
         <div className="mb-[120px] flex flex-col gap-5 md:flex-row md:gap-[18px] lg:mb-[160px] lg:gap-[30px]">
           <div className="flex flex-col gap-5 md:flex-[0.415] lg:flex-[0.413] lg:gap-8">
-            <picture>
-              <source
-                media="(min-width: 1110px)"
-                srcSet={img(product.gallery.first.desktop)}
-              />
-              <source
-                media="(min-width: 768px)"
-                srcSet={img(product.gallery.first.tablet)}
-              />
+            <div className="relative aspect-327/174 w-full overflow-hidden rounded-lg md:aspect-277/174 lg:aspect-445/280">
               <Image
-                className="w-full rounded-lg"
                 src={img(product.gallery.first.mobile)}
-                alt={product.name}
-                width={500}
-                height={300}
-              />
-            </picture>
-            <picture>
-              <source
-                media="(min-width: 1110px)"
-                srcSet={img(product.gallery.second.desktop)}
-              />
-              <source
-                media="(min-width: 768px)"
-                srcSet={img(product.gallery.second.tablet)}
+                alt={`${product.name} gallery 1`}
+                fill
+                className="object-cover md:hidden"
               />
               <Image
-                className="w-full rounded-lg"
-                src={img(product.gallery.second.mobile)}
-                alt={product.name}
-                width={500}
-                height={300}
+                src={img(product.gallery.first.tablet)}
+                alt={`${product.name} gallery 1`}
+                fill
+                className="hidden object-cover md:block lg:hidden"
               />
-            </picture>
+              <Image
+                src={img(product.gallery.first.desktop)}
+                alt={`${product.name} gallery 1`}
+                fill
+                className="hidden object-cover lg:block"
+              />
+            </div>
+            <div className="relative aspect-327/174 w-full overflow-hidden rounded-lg md:aspect-277/174 lg:aspect-445/280">
+              <Image
+                src={img(product.gallery.second.mobile)}
+                alt={`${product.name} gallery 2`}
+                fill
+                className="object-cover md:hidden"
+              />
+              <Image
+                src={img(product.gallery.second.tablet)}
+                alt={`${product.name} gallery 2`}
+                fill
+                className="hidden object-cover md:block lg:hidden"
+              />
+              <Image
+                src={img(product.gallery.second.desktop)}
+                alt={`${product.name} gallery 2`}
+                fill
+                className="hidden object-cover lg:block"
+              />
+            </div>
           </div>
-          <picture className="g:flex-[0.587] md:flex-[0.585]">
-            <source
-              media="(min-width: 1110px)"
-              srcSet={img(product.gallery.third.desktop)}
-            />
-            <source
-              media="(min-width: 768px)"
-              srcSet={img(product.gallery.third.tablet)}
+          <div className="relative aspect-327/368 w-full overflow-hidden rounded-lg md:aspect-395/368 md:flex-[0.585] lg:aspect-635/592 lg:flex-[0.587]">
+            <Image
+              src={img(product.gallery.third.mobile)}
+              alt={`${product.name} gallery 3`}
+              fill
+              className="object-cover md:hidden"
             />
             <Image
-              className="h-full w-full rounded-lg object-cover"
-              src={img(product.gallery.third.mobile)}
-              alt={product.name}
-              width={700}
-              height={600}
+              src={img(product.gallery.third.tablet)}
+              alt={`${product.name} gallery 3`}
+              fill
+              className="hidden object-cover md:block lg:hidden"
             />
-          </picture>
+            <Image
+              src={img(product.gallery.third.desktop)}
+              alt={`${product.name} gallery 3`}
+              fill
+              className="hidden object-cover lg:block"
+            />
+          </div>
         </div>
       </div>{" "}
       <ProductLikeBox products={othersWithCategory} />

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Checkout | audiophile",
+  title: "Checkout | Audiophile",
   description:
     "Complete your purchase of premium audio equipment. Secure checkout with multiple payment options.",
 };
@@ -13,4 +13,3 @@ export default function CheckoutLayout({
 }) {
   return <>{children}</>;
 }
-

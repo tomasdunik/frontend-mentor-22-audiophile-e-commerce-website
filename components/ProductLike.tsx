@@ -17,18 +17,26 @@ const ProductLike = ({ slug, name, image, category }: ProductLikeProps) => {
 
   return (
     <div className="flex flex-col items-center md:gap-0">
-      <picture>
-        <source media="(min-width: 1110px)" srcSet={img(image.desktop)} />
-        <source media="(min-width: 768px)" srcSet={img(image.tablet)} />
+      <div className="relative mb-8 aspect-327/120 w-full overflow-hidden rounded-lg md:mb-10 md:aspect-223/318 lg:aspect-350/318">
         <Image
-          className="mb-8 rounded-lg md:mb-10"
           src={img(image.mobile)}
           alt={name}
-          width={350}
-          height={318}
-          sizes="(min-width: 1024px) 33vw, (min-width: 768px) 33vw, 100vw"
+          fill
+          className="object-cover md:hidden"
         />
-      </picture>
+        <Image
+          src={img(image.tablet)}
+          alt={name}
+          fill
+          className="hidden object-cover md:block lg:hidden"
+        />
+        <Image
+          src={img(image.desktop)}
+          alt={name}
+          fill
+          className="hidden object-cover lg:block"
+        />
+      </div>
       <p className="tracking-1-71 mb-8 text-xl leading-33 font-bold uppercase">
         {name}
       </p>

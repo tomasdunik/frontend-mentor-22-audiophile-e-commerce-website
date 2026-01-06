@@ -13,7 +13,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Home | audiophile",
+  title: "Home | Audiophile",
   description: "Audiophile is an all in one stop to fulfill your audio needs.",
 };
 

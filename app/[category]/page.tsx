@@ -47,7 +47,7 @@ export async function generateMetadata({
   const heading = category.charAt(0).toUpperCase() + category.slice(1);
 
   return {
-    title: `${heading} | audiophile`,
+    title: `${heading} | Audiophile`,
     description: `Browse our selection of ${category} at Audiophile.`,
   };
 }
