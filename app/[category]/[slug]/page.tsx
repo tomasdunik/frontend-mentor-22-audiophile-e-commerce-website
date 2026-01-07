@@ -96,6 +96,7 @@ const page = async ({
                 item={{
                   slug: product.slug,
                   name: product.name,
+                  nameCart: product.nameCart,
                   price: product.price,
                   image: img(product.image.mobile),
                 }}

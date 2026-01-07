@@ -16,7 +16,7 @@ export default function CheckoutSummary() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 rounded-lg bg-white px-6 pt-6 pt-[30px] pb-8 md:px-[27px] md:pb-[30px] lg:h-fit lg:w-[350px] lg:px-8 lg:pt-8 lg:pb-8">
+      <div className="flex flex-col gap-8 rounded-lg bg-white px-6 pt-[30px] pb-8 md:px-[27px] md:pb-[30px] lg:h-fit lg:w-[350px] lg:px-8 lg:pt-8 lg:pb-8">
         <h2 className="tracking-1-29 text-lg leading-25 font-bold">SUMMARY</h2>
 
         {items.length === 0 ? (
@@ -38,7 +38,7 @@ export default function CheckoutSummary() {
                   <div className="flex w-full justify-between">
                     <div>
                       <p className="text-md leading-25 font-bold">
-                        {item.name}
+                        {item.nameCart || item.name}
                       </p>
                       <p className="text-black-50 text-sm leading-25 font-bold">
                         $ {formatPrice(item.price)}

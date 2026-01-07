@@ -7,6 +7,7 @@ type Props = {
   item: {
     slug: string;
     name: string;
+    nameCart: string;
     price: number;
     image: string;
   };

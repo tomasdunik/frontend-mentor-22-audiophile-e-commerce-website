@@ -85,7 +85,9 @@ const BasketPopUp = ({ onClose }: BasketPopUpProps) => {
                 className="w-16 rounded-lg"
               />
               <div>
-                <p className="text-md leading-25 font-bold">{item.name}</p>
+                <p className="text-md leading-25 font-bold">
+                  {item.nameCart || item.name}
+                </p>
                 <p className="text-black-50 text-sm leading-25 font-bold">
                   $ {formatPrice(item.price)}
                 </p>

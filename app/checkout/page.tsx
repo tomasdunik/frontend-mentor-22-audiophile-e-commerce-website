@@ -108,7 +108,7 @@ const CheckoutPage = () => {
     <>
       <ButtonGoBack />
       <section className="mx-6 mb-[97px] flex flex-col gap-8 md:mx-10 md:mb-[116px] lg:mx-auto lg:mb-[141px] lg:max-w-[1190px] lg:flex-row lg:gap-[30px] lg:px-10">
-        <div className="rounded-lg bg-white px-6 pt-6 pt-[30px] pb-8 md:px-[27px] md:pb-[30px] lg:w-[730px] lg:px-12 lg:pt-[54px] lg:pb-12">
+        <div className="rounded-lg bg-white px-6 pt-[30px] pb-8 md:px-[27px] md:pb-[30px] lg:w-[730px] lg:px-12 lg:pt-[54px] lg:pb-12">
           <h1 className="tracking-1 md:tracking-1-14 mb-8 text-2xl leading-38 font-bold md:mb-[41px] md:text-3xl md:leading-36">
             CHECKOUT
           </h1>

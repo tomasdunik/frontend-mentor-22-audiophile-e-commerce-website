@@ -11,6 +11,7 @@ type Product = {
   id: number;
   slug: string;
   name: string;
+  nameCart: string;
   image: { mobile: string; tablet: string; desktop: string };
   category: CategoryParam;
   categoryImage: { mobile: string; tablet: string; desktop: string };
@@ -28,7 +29,6 @@ type Product = {
     slug: string;
     name: string;
     image: { mobile: string; tablet: string; desktop: string };
-    category: CategoryParam;
   }>;
 };
 

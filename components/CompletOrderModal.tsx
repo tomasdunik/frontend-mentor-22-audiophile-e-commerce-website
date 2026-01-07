@@ -61,7 +61,7 @@ const CompletOrderModal = () => {
                   <div className="flex w-full justify-between pb-3">
                     <div>
                       <p className="text-md leading-25 font-bold">
-                        {item.name}
+                        {item.nameCart || item.name}
                       </p>
                       <p className="text-black-50 text-sm leading-25 font-bold">
                         ${formatPrice(item.price)}
