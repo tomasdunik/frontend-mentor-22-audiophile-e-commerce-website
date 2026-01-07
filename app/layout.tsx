@@ -45,7 +45,7 @@ export default function RootLayout({
       <body className={`${manrope.className} flex min-h-screen flex-col`}>
         <CartProvider>
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="grow">{children}</main>
           <Footer />
         </CartProvider>
       </body>

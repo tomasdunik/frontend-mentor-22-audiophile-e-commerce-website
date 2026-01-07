@@ -148,7 +148,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.name}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.name
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -177,7 +177,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.email}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.email
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -209,7 +209,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.phone}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.phone
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -244,7 +244,7 @@ const CheckoutPage = () => {
                   aria-invalid={!!errors.address}
                   className={`placeholder-black-40 rounded-lg border ${
                     errors.address
-                      ? "border-wrong-red outline-wrong-red outline outline-2"
+                      ? "border-wrong-red outline-wrong-red outline-2"
                       : "border-[#CFCFCF]"
                   } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                 />
@@ -276,7 +276,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.zip}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.zip
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -305,7 +305,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.city}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.city
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -336,7 +336,7 @@ const CheckoutPage = () => {
                     aria-invalid={!!errors.country}
                     className={`placeholder-black-40 rounded-lg border ${
                       errors.country
-                        ? "border-wrong-red outline-wrong-red outline outline-2"
+                        ? "border-wrong-red outline-wrong-red outline-2"
                         : "border-[#CFCFCF]"
                     } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                   />
@@ -410,7 +410,7 @@ const CheckoutPage = () => {
                       aria-invalid={!!errors.eMoneyNumber}
                       className={`placeholder-black-40 rounded-lg border ${
                         errors.eMoneyNumber
-                          ? "border-wrong-red outline-wrong-red outline outline-2"
+                          ? "border-wrong-red outline-wrong-red outline-2"
                           : "border-[#CFCFCF]"
                       } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                     />
@@ -439,7 +439,7 @@ const CheckoutPage = () => {
                       aria-invalid={!!errors.eMoneyPin}
                       className={`placeholder-black-40 rounded-lg border ${
                         errors.eMoneyPin
-                          ? "border-wrong-red outline-wrong-red outline outline-2"
+                          ? "border-wrong-red outline-wrong-red outline-2"
                           : "border-[#CFCFCF]"
                       } py-[18px] pl-6 text-sm leading-19 font-bold text-black caret-[#D87D4A] placeholder:text-sm placeholder:leading-19`}
                     />

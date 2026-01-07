@@ -35,7 +35,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="relative sticky top-0 z-50 bg-[#121212]">
+      <header className="sticky top-0 z-50 bg-[#121212]">
         <section className="relative flex max-w-[1110px] items-center justify-between border-b border-[#97979733] px-6 py-8 md:mx-auto md:px-10 lg:px-0">
           <div className="flex items-center gap-[42px]">
             <button
@@ -80,7 +80,7 @@ const Header = () => {
             </Link>
           </div>
           <nav>
-            <ul className="tracking-2 hidden gap-4 gap-[34px] text-xs leading-25 font-bold text-white uppercase lg:flex">
+            <ul className="tracking-2 hidden gap-[34px] text-xs leading-25 font-bold text-white uppercase lg:flex">
               <li>
                 <Link href="/">Home</Link>
               </li>
@@ -115,7 +115,7 @@ const Header = () => {
               <path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l96 200h280l110-200H246Zm-38-80h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Zm134 280h280-280Z" />
             </svg>
             {cart.items.length > 0 && (
-              <span className="bg-orange group-hover:text-orange pointer-events-none absolute -top-2.5 -right-2 flex h-5 min-h-[20px] w-5 min-w-[20px] items-center justify-center rounded-full text-[0.75rem] font-bold text-white shadow group-hover:bg-white">
+              <span className="bg-orange group-hover:text-orange text-xxs pointer-events-none absolute -top-2.5 -right-2 flex h-5 min-h-[20px] w-5 min-w-[20px] items-center justify-center rounded-full font-bold text-white shadow group-hover:bg-white">
                 {cart.items.reduce((sum, i) => sum + i.quantity, 0)}
               </span>
             )}

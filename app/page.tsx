@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-[center_-83px] md:mb-24 md:bg-[url('../public/images/home/tablet/image-header.jpg')] md:bg-[center_-150px] md:bg-no-repeat lg:mb-[120px] lg:overflow-hidden lg:bg-[#121212] lg:bg-none lg:bg-center">
+      <section className="mb-10 bg-[url('../public/images/home/mobile/image-header.jpg')] bg-cover bg-position-[center_-83px] md:mb-24 md:bg-[url('../public/images/home/tablet/image-header.jpg')] md:bg-position-[center_-150px] md:bg-no-repeat lg:mb-[120px] lg:overflow-hidden lg:bg-[#121212] lg:bg-none lg:bg-center">
         <div className="md:px-10 lg:mx-auto lg:flex lg:max-h-[632px] lg:max-w-[1190px] lg:items-center lg:gap-[45px]">
           <div className="flex flex-col items-center px-6 pt-[108px] pb-[112px] text-center md:px-0 md:pt-[126px] md:pb-[167px] lg:z-1 lg:max-w-[398px] lg:items-start lg:text-left">
             <p className="text-white-50 tracking-10 pb-4 text-sm leading-19 uppercase md:pb-6">
@@ -49,7 +49,7 @@ export default function Home() {
       </section>
       <Category />
       <section className="px-6 pb-[120px] md:px-10 md:pb-24 lg:mx-auto lg:max-w-[1190px] lg:pb-[200px]">
-        <div className="bg-orange mb-6 rounded-lg bg-[url('../public/images/home/desktop/pattern-circles.svg')] bg-cover bg-[center_-119px] md:mb-8 md:bg-auto md:bg-[center_-285px] md:bg-no-repeat lg:mb-12 lg:flex lg:items-center lg:justify-center lg:gap-[138px] lg:overflow-hidden lg:bg-[-170px_-50px]">
+        <div className="bg-orange mb-6 rounded-lg bg-[url('../public/images/home/desktop/pattern-circles.svg')] bg-cover bg-position-[center_-119px] md:mb-8 md:bg-auto md:bg-position-[center_-285px] md:bg-no-repeat lg:mb-12 lg:flex lg:items-center lg:justify-center lg:gap-[138px] lg:overflow-hidden lg:bg-position-[-170px_-50px]">
           <picture>
             <source
               media="(min-width: 1110px)"
